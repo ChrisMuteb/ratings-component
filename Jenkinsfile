@@ -8,7 +8,9 @@ pipeline{
 
     stages {
         stage('Checkout'){
-            echo 'hello ratings component'
+            steps {
+                echo 'hello ratings component'
+            }
         }
     }
 }
