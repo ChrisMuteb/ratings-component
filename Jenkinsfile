@@ -28,7 +28,10 @@ pipeline{
                     params.MY_SYNC_PARAM
                 }
             }
-            echo 'Deploy: ratings-component'
+            steps{
+                echo 'Deploy: ratings-component'
+            }
+            
         }
     }
 }
