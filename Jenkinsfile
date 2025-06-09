@@ -3,7 +3,7 @@ pipeline{
 
     environment {
         AWS_DEFAULT_REGION = 'eu-west-1'
-        S3_BUCKET = 'ratings-component'
+        S3_BUCKET = 'ratings-component-eu'
     }
     parameters {
         booleanParam(
@@ -31,8 +31,20 @@ pipeline{
                 }
             }
             steps{
-                echo 'Deploy: ratings-component'
-                // sh 'aws s3 sync . s3://$S3_BUCKET --delete --exclude ".git/*"'
+                withCredentials([
+                    string(credentialsId: 'aws-access-key-id-lsp', variable: 'AWS_ACCESS_KEY_ID'),
+                    string(credentialsId: 'aws-secret-access-key-lsp', variable: 'AWS_SECRET_ACCESS_KEY')
+                ]){
+                    echo 'Deploy: ratings-component...'
+                    sh '''
+                        echo "Deploying to S3..."
+                        aws s3 sync . s3://$S3_BUCKET \
+                        --delete \
+                        --exclude ".git/*" \
+                        --exclude "Jenkinsfile" \
+                        --exclude "*.md"
+                    '''
+                }
             }
             
         }
