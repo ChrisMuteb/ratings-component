@@ -20,7 +20,9 @@ pipeline{
             }
         }
         stage('Test'){
-            echo 'build: ratings-component'
+            steps{
+                echo 'build: ratings-component'
+            }
         }
         stage('Deploy'){
             when{
@@ -30,6 +32,7 @@ pipeline{
             }
             steps{
                 echo 'Deploy: ratings-component'
+                // sh 'aws s3 sync . s3://$S3_BUCKET --delete --exclude ".git/*"'
             }
             
         }
