@@ -8,7 +8,7 @@ pipeline{
     parameters {
         booleanParam(
             defaultValue: false,
-            description: 'Sync with s3 bucket'
+            description: 'Sync with s3 bucket',
             name: 'MY_SYNC_PARAM'
         )
     }
