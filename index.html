@@ -4,11 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ratings Component</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
 </head>
 <body>
     <div class="container">
-        <h1>Ratings Component</h1>
+        <div class="card shadow m-5" style="width: 35rem;">
+            <div class="card-body">
+                <!-- title & rating -->
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h3>What others think about the product</h3>
+                    </div>
+                    <div class="border shadow p-2">
+                        <span></span>
+                        <h3>4.8</h3>
+                        <p>Average Rating</p>
+                    </div>
+                </div>
+
+                <!-- input form -->
+
+                <!-- reviews -->
+                 <div class="d-block m-3">
+                    <h6>Reviews</h6>
+                    <div>
+                        <div>
+                            <div class="float-start border">
+                                <span class="me-4">5 <i class="bi bi-star"></i></span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-warning" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                 </div>
+                    
+                <!-- </div> -->
+
+                <!-- write review -->
+                <div class="d-block">
+                    <button class="btn btn-primary rounded-5">Write Review</button>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
